@@ -27,6 +27,12 @@ vim.api.nvim_create_user_command('Fixissue', function()
   vim.lsp.buf.code_action()
 end, {})
 
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("Neotree bottom .")
+	end,
+})
+
 --[[vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd("Neotree")
